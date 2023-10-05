@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Métodos básicos de manipulação</title>
+  </head>
+  <body>
+    <script>
+      let people = ["Rafael", "André", "Paulo", "Jonny", "Marcelo"]
+
+      // 0 -> n
+      // 5 elementos = people.Length
+
+      //Retornar elemento específico do array
+      console.log(people[3])
+      //Retornar o ultimo
+      console.log(people[people.length -1])
+
+      //Retornar 'fatias' de um array
+      console.log(people.slice(2))
+      console.log(people.slice(1, 3))
+
+      //Adiciona novos elementos no final do array
+      people.push("Ana")
+      //Adiciona novos elementos no início do array
+      people.unshift("Maria")
+      
+      //Remove elementos do fim do array
+      people.pop()
+      //Remove elementos do incío
+      people.shift()
+
+      //Remove 'fatias' de um array
+      people.splice(1,2)
+      
+
+      //localizar elementos
+      let index = people.indexOf("Jonny")
+      people.splice(index, 1)
+      console.log(index)
+   </script>
+  </body>
+</html>
