@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises e processamento assíncrono</title>
+</head>
+<body>
+    <button>Executar</button>
+    <script>
+        let count = 0 
+        function testPromise () {
+            const promiseCout = ++count
+
+            console.log("sync started")
+            new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (promiseCout % 2 == 0){
+                        resolve(promiseCout)
+                    }else {
+                        reject(promiseCout)
+
+                    }
+                }, 3000)
+
+            }).then((value) => {
+                console.log(`async finished ${value}`)
+            }).catch((value) => {
+                console.error("async error")
+            })
+
+            console.log("sync finished")
+        }
+
+        const buttonEl = document.querySelector("button")
+        buttonEl.addEventListener("click", testPromise)
+    </script>
+</body>
+</html>
