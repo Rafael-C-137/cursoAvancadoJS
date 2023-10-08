@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando Style CSS</title>
+</head>
+<body>
+    <h1 id="title">Título da Página</h1>
+    <button id="change-color">Alterar Cor</button>
+
+    <script>
+        const titleEl = document.querySelector("#title")
+
+        const buttonEl = document.querySelector("#change-color")
+        buttonEl.addEventListener("click", () => {
+            const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+        
+        // Aplicar a cor ao estilo do elemento de título
+        titleEl.style.color = randomColor;
+        })
+    </script>
+</body>
+
+</html>
